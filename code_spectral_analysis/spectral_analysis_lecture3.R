@@ -87,4 +87,48 @@ lines(freq, ar1.spec(phi = 0.5, num.freq = Tstar/2), col = "red", lwd = 2)
 
 
 
-### SMOOTHED PERIODOGRAM
+########## SMOOTHED PERIODOGRAM (UNIFORMS WEIGHTS)
+
+T <- 512
+freq <- seq(0, 0.5, len = T/2)
+xt <- arima.sim(n = T, model = list(ar = c(0.5)))
+I <- abs(fft(xt))^2/T
+plot(freq, I[1:(T/2)], lwd = 1, col="black", type="l",
+     main = "No Smoothing", ylab = "Power Spectrum", xlab = "Frequency")
+lines(freq,ar1.spec(0.5,sigma2=1,num.freq=T/2),col="red",lwd = 3)
+
+
+M <- 11
+# Creating kernel coefficients with equal weights given by 1/(2M + 1)
+k <- kernel(rep(1, M + 1)/(2*M + 1))
+
+plot(freq, ar1.spec(0.5, sigma2 = 1, num.freq = T/2),
+     lwd = 2, main = "T = 512, 2M + 1 = 11",  
+     ylab = "Power Spectrum", xlab = "Frequency", 
+     col = "red", type = "l")
+spec.pgram(xt, kernel = k, add = TRUE, lwd = 2)
+
+
+M <- 31
+# Creating kernel coefficients with equal weights given by 1/(2M + 1)
+k <- kernel(rep(1, M + 1)/(2*M + 1))
+
+plot(freq, ar1.spec(0.5, sigma2 = 1, num.freq = T/2),
+     lwd = 2, main = "T = 512, 2M + 1 = 31",  
+     ylab = "Power Spectrum", xlab = "Frequency", 
+     col = "red", type = "l")
+spec.pgram(xt, kernel = k, add = TRUE, lwd = 2)
+
+
+M <- 75
+# Creating kernel coefficients with equal weights given by 1/(2M + 1)
+k <- kernel(rep(1, M + 1)/(2*M + 1))
+
+plot(freq, ar1.spec(0.5, sigma2 = 1, num.freq = T/2),
+     lwd = 2, main = "T = 512, 2M + 1 = 75",  
+     ylab = "Power Spectrum", xlab = "Frequency", 
+     col = "red", type = "l")
+spec.pgram(xt, kernel = k, add = TRUE, lwd = 2)
+
+
+# It looks that by using M = 11 we get the best fit. 
