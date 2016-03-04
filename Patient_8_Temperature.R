@@ -3,8 +3,8 @@
 
 require("astsa")
 
-# setwd("C:/Users/Beniamino/Desktop/Project_8")
-setwd("/homes/hadjamar/Documents/Project_8")
+setwd("C:/Users/Beniamino/Desktop/Project_8")
+# setwd("/homes/hadjamar/Documents/Project_8")
 
 source("analysis_healthy_patients.R")
 
@@ -189,13 +189,14 @@ driving.frequencies <- c(freq[which(fhat.daniel$spec
                                     == max(fhat.daniel$spec))+ 1],
                          freq[5 + 1],
                          freq[2 + 1],
-                         freq[7 + 1])
+                         freq[7 + 1],
+                         freq[12 + 1])
 
 
 # Getting the harmonics and adding the trend
 harmonics <- list()
 
-for(i in 1:4) {
+for(i in 1:5) {
   harmonics[[i]] <- get_harmonic(res.Temp8, driving.frequencies[i])
 }
 
@@ -204,7 +205,8 @@ t <- 1:T
 trend.temp8 <- as.vector(fitted(lm(Temp8 ~ t)))
 
 # Final Model
-model.temp8 <- harmonics[[1]] + harmonics[[2]] + harmonics[[3]] + harmonics[[4]] + trend.temp8
+model.temp8 <- harmonics[[1]] + harmonics[[2]] + 
+  harmonics[[3]] + harmonics[[4]] + harmonics[[5]] + trend.temp8
 
 # Plotting time series, adding single harmonics + final model
 plot.ts(Temp8, type = "o", pch = 19, main = "Temperature Patient 8", ylab = "Temperature")
@@ -212,23 +214,34 @@ lines(1:T, harmonics[[1]] + trend.temp8, col = "blue", lwd = 3, lty = 3)
 lines(1:T, harmonics[[2]] + trend.temp8, col = "chartreuse3", lwd = 3, lty = 3)
 lines(1:T, harmonics[[3]] + trend.temp8, col = "grey", lwd = 3, lty = 3)
 lines(1:T, harmonics[[4]] + trend.temp8, col = "darkorange1", lwd = 3, lty = 3)
+lines(1:T, harmonics[[5]] + trend.temp8, col = "pink", lwd = 3, lty = 3)
 lines(1:T, model.temp8, col = "red", lwd = 5)
 
 legend("bottomright", 
-       c(expression(paste(omega, " = 1/24")), 
-         expression(paste(omega, " = 1/19")),
-         expression(paste(omega, " = 1/47")),
-         expression(paste(omega, " = 1/13"))), 
-       lty = 3, col = c("blue", "chartreuse3", "grey", "darkorange1"), lwd = 3)
+       c(expression(paste(omega, " = 1/24 ")), 
+         expression(paste(omega, " = 1/19 ")),
+         expression(paste(omega, " = 1/47 ")),
+         expression(paste(omega, " = 1/13 ")),
+         expression(paste(omega, " = 1/8 "))), 
+       lty = 3, col = c("blue", "chartreuse3", "grey", 
+                        "darkorange1","pink"), lwd = 3)
 legend("bottomleft", "Total Model", lwd = 5, col = "red", lty = 1)
 
 
 
 
 
-# 
+### Residual Analysis
+residuals <- (Temp8 - model.temp8)/sd(Temp8 - model.temp8)
 
+# Standardized residuals plot
+plot(1:T, residuals, pch = 19, col = "red")
+abline(h = 0, col = "black", lty = 2)
 
+# QQPlot
 
+grid <- -300:300/100
+qqnorm(residuals, ylim = c(-3, 3), xlim = c(-3, 3))
+lines(grid, grid)
 
-
+# The residuals are not exactly Normal...but that's what we have.
