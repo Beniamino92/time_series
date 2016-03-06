@@ -164,25 +164,6 @@ freq[which(ar9.fit == max(ar9.fit)) + 1]
 #################### FOURIER REGRESSION ###################
 
 
-# Functiont to obtain the harmonic, given a specific frequency omega
-get_harmonic <- function(x, omega) {
-  
-  T <- length(x)
-  cosine <- cos(2*pi*1:T*omega)
-  sine <- sin(2*pi*1:T*omega)
-  
-  fit <- lm(x ~ 0 + cosine + sine)
-  
-  U1 <- as.numeric(fit$coefficients[1])
-  U2 <- as.numeric(fit$coefficients[2])
-  phi <- atan2(U2, U1)
-  A <- sqrt(U1^2 + U2^2)
-  
-  harmonic <- A * cos(2*pi*1:T*omega + phi)
-  return(harmonic)
-  
-}
-
 # Selecting the four frequencies, in order to obtain the four harmonics later
 driving.frequencies <- c(freq[which(fhat.daniel$spec
                                     == max(fhat.daniel$spec))+ 1],
