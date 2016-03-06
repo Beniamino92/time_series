@@ -3,8 +3,9 @@
 
 require("astsa")
 
-setwd("C:/Users/Beniamino/Desktop/Project_8")
+# setwd("C:/Users/Beniamino/Desktop/Project_8")
 # setwd("/homes/hadjamar/Documents/Project_8")
+setwd("/home/hadjamar/Desktop/Project_8")
 
 source("analysis_healthy_patients.R")
 
@@ -45,8 +46,6 @@ plot(freq, periodogram$spec, type = "l", lwd = 3, col = "black",
      main = "Power Spectrum - Temperature [2] ")
 lines(freq, fhat.unif$spec, col = "blue", lwd = 3)
 lines(freq, fhat.daniel$spec, col = "red", lwd = 3)
-lines(freq, ar2.fit, col = "green", lwd = 3)
-lines(freq, ar9.fit, col = "orange", lwd = 3)
 legend("topright",lty=1,col=c("black","blue","red"),
        c("Periodogram","Uniform weights","Daniell weights"),
        lwd = 2)
@@ -56,7 +55,7 @@ legend("topright",lty=1,col=c("black","blue","red"),
 # maximum value on the periodogram
 
 driving.freq <- freq[which(fhat.daniel$spec
-                           == max(fhat.daniel$spec))+ 1] # 0.03157895
+                           == max(fhat.daniel$spec))+ 1] # 0.04210526
 driving.freq
 
 
@@ -204,6 +203,7 @@ for(i in 1:5) {
 t <- 1:T
 trend.temp8 <- as.vector(fitted(lm(Temp8 ~ t)))
 
+
 # Final Model
 model.temp8 <- harmonics[[1]] + harmonics[[2]] + 
   harmonics[[3]] + harmonics[[4]] + harmonics[[5]] + trend.temp8
@@ -232,16 +232,51 @@ legend("bottomleft", "Total Model", lwd = 5, col = "red", lty = 1)
 
 
 ### Residual Analysis
-residuals <- (Temp8 - model.temp8)/sd(Temp8 - model.temp8)
+residuals <- Temp8 - model.temp8
+std.residuals <- residuals/sd(residuals)
 
 # Standardized residuals plot
-plot(1:T, residuals, pch = 19, col = "red")
+plot(1:T, std.residuals, pch = 19, col = "red")
 abline(h = 0, col = "black", lty = 2)
 
 # QQPlot
 
 grid <- -300:300/100
-qqnorm(residuals, ylim = c(-3, 3), xlim = c(-3, 3))
+qqnorm(std.residuals, ylim = c(-3, 3), xlim = c(-3, 3))
 lines(grid, grid)
 
 # The residuals are not exactly Normal...but that's what we have.
+
+
+
+########### FORECASTING #############
+
+# Ask Barbel what she thinks about this prevision
+
+# My forecast for the next 24 hours, it's made by an average
+# of the final model we fitted, over 24 hours.
+# That is:
+
+Forecast24h <- (model.temp8[1:24] + model.temp8[25:48] + 
+                          model.temp8[49:72] + model.temp8[c(73:95, 95)])/4
+
+Residuals24h <- (residuals[1:24] + residuals[25:48] + 
+                   residuals[49:72] + residuals[c(73:95, 95)])/4
+
+upper.CI <- Forecast24h + 1.96*sd(Residuals24h)
+lower.CI <- Forecast24h - 1.96*sd(Residuals24h)
+
+# Plotting forecasting and relative confidence intervals
+plot.ts(Temp8, lwd = 1, type = "o", pch = 19,
+        xlim = c(1, T + 24), ylab = "Temperature")
+lines(1:T, model.temp8, col = "red", lwd = 4)
+lines(T:(T + 24), c(model.temp8[T], Forecast24h), col = "blue", lwd = 4)
+lines(T:(T + 24), c(model.temp8[T], upper.CI),
+      col = "blue", lwd = 2, lty = 3)
+lines(T:(T + 24), c(model.temp8[T], lower.CI),
+      col = "blue", lwd = 2, lty = 3)
+
+
+
+
+
