@@ -4,10 +4,11 @@ ar2_sim <- function(r1, r2, len = 200) {
   out <- rep(0, len)
   a1 <- (1 / r1) + (1 / r2)
   a2 <- - 1 / (r1 * r2)
-  epsilon <- rnorm(len)
-  for(t in 3:len) {
-    out[t] <- out[t - 2] * a1 + out[t - 1] * a2 + epsilon[t]
-  }
+  #epsilon <- rnorm(len)
+  #for(t in 3:len) {
+  #  out[t] <- out[t - 2] * a1 + out[t - 1] * a2 + epsilon[t]
+  #}
+  out <- arima.sim(n = len, list(ar = c(a1, a2)))
   out
 }
 
