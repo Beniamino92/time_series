@@ -4,9 +4,9 @@
 require("astsa")
 
 # setwd("C:/Users/Beniamino/Desktop/Project_8")
-# setwd("/homes/hadjamar/Documents/Project_8")
-setwd("/home/hadjamar/Desktop/Project_8")
+# setwd("/home/hadjamar/Desktop/Project_8")
 
+setwd("/homes/hadjamar/Documents/Project_8/")
 source("analysis_healthy_patients.R")
 
 ### Let's work with Patient 8 ###
@@ -190,6 +190,7 @@ model.temp8 <- harmonics[[1]] + harmonics[[2]] +
   harmonics[[3]] + harmonics[[4]] + harmonics[[5]] + trend.temp8
 
 # Plotting time series, adding single harmonics + final model
+
 plot.ts(Temp8, type = "o", pch = 19, main = "Temperature Patient 8", ylab = "Temperature")
 lines(1:T, harmonics[[1]] + trend.temp8, col = "blue", lwd = 3, lty = 3)
 lines(1:T, harmonics[[2]] + trend.temp8, col = "chartreuse3", lwd = 3, lty = 3)
