@@ -5,8 +5,8 @@ require("astsa")
 
 
 # setwd("C:/Users/Beniamino/Desktop/Project_8")
-setwd("/homes/hadjamar/Documents/Project_8")
-# setwd("/home/hadjamar/Desktop/Project_8")
+# setwd("/homes/hadjamar/Documents/Project_8")
+setwd("/home/hadjamar/Desktop/Project_8")
 
 source("analysis_healthy_patients.R")
 
@@ -223,3 +223,41 @@ lines(T:(T + 24), c(model.RA8[T], lower.CI),
 
 
 
+
+
+
+#### Testing the model:
+
+# This consist of fitting the model (using harmonic regression) on 3 days,
+# and testing on the 4th.
+
+training.set <- RA8[1:72]
+test.set <- RA8[72:95]
+
+T <- length(training.set)
+t <- 1:T
+freq <- 0:((T-1)/2 - 1)/T
+
+res.RA8 <- lm(training.set ~ t)$residuals
+trend.RA8 <- as.vector(fitted(lm(training.set ~ t)))
+
+# Harmonic Regression (using the frequencies ) 
+harmonics <- list()
+for(i in 1:number.harmonics) {
+  harmonics[[i]] <- get_harmonic(res.RA8, driving.frequencies[i])
+}
+
+model.RA8 <- harmonics[[1]] + harmonics[[2]] + harmonics[[4]]  + trend.RA8
+
+forecast24h <- (model.RA8[1:24] + model.RA8[25:48] + model.RA8[49:72])/3 
+
+sum((forecast24h - test.set)^2)/24 # 141.3878
+
+# Fitting the model just by using 3 days, and testing to the 4th, doesn't 
+# look good. 
+
+
+# Just to see what's going on
+plot.ts(RA8, type = "o", pch = 19, ylim = c(-10, 70))
+lines(1:T, model.RA8, lwd = 4, col = "red")
+lines(72:95, forecast24h, col = "blue", lwd = 4)

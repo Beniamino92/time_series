@@ -4,9 +4,9 @@
 require("astsa")
 
 # setwd("C:/Users/Beniamino/Desktop/Project_8")
-# setwd("/home/hadjamar/Desktop/Project_8")
+setwd("/home/hadjamar/Desktop/Project_8")
+#setwd("/homes/hadjamar/Documents/Project_8/")
 
-setwd("/homes/hadjamar/Documents/Project_8/")
 source("analysis_healthy_patients.R")
 
 ### Let's work with Patient 8 ###
@@ -258,6 +258,39 @@ lines(T:(T + 24), c(model.temp8[T], lower.CI),
       col = "blue", lwd = 2, lty = 3)
 
 
+
+
+
+
+#### Testing the model:
+
+# This consist of fitting the model (using harmonic regression) on 3 days,
+# and testing on the 4th.
+
+training.set <- Temp8[1:72]
+test.set <- Temp8[72:95]
+
+T <- length(training.set)
+t <- 1:T
+freq <- 0:((T-1)/2 - 1)/T
+
+res.Temp8 <- lm(training.set ~ t)$residuals
+trend.temp8 <- as.vector(fitted(lm(training.set ~ t)))
+
+# Harmonic Regression (using the frequencies ) 
+harmonics <- list()
+for(i in 1:5) {
+  harmonics[[i]] <- get_harmonic(res.Temp8, driving.frequencies[i])
+}
+model.Temp8 <- get_model(harmonics, T) + trend.temp8
+forecast24h <- (model[1:24] + model[25:48] + model[49:72])/3 
+
+sum((forecast24h - test.set)^2)/24 # 0.5783061
+
+# Just to see what's going on
+plot.ts(Temp8, type = "o", pch = 19)
+lines(1:T, model.Temp8, lwd = 4, col = "red")
+lines(73:96, forecast24h, col = "blue", lwd = 4)
 
 
 

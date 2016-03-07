@@ -2,8 +2,9 @@
 
 # setwd("C:/Users/Beniamino/Desktop/Data_Healthy_Patients")
 # setwd("/homes/hadjamar/Documents/Project_8/time_series")
-setwd("/homes/hadjamar/Documents/Project_8/")
-# setwd("/home/hadjamar/Desktop/Project_8")
+# setwd("/homes/hadjamar/Documents/Project_8/")
+
+setwd("/home/hadjamar/Desktop/Project_8")
 
 
 # Rest activity
