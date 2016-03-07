@@ -11,6 +11,8 @@ source("analysis_healthy_patients.R")
 
 ### Let's work with Patient 8 ###
 
+hist(RA8, breaks = 40, col = "pink")
+
 T <- length(Temp8) # 95
 t <- 1:T
 
@@ -157,10 +159,6 @@ freq[which(ar9.fit == max(ar9.fit)) + 1]
 
 
 
-
-
-
-
 #################### FOURIER REGRESSION ###################
 
 
@@ -247,6 +245,7 @@ Residuals24h <- (residuals[1:24] + residuals[25:48] +
 
 upper.CI <- Forecast24h + 1.96*sd(Residuals24h)
 lower.CI <- Forecast24h - 1.96*sd(Residuals24h)
+
 
 # Plotting forecasting and relative confidence intervals
 plot.ts(Temp8, lwd = 1, type = "o", pch = 19,

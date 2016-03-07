@@ -19,10 +19,9 @@ t <- 1:T
 freq <- 0:((T-1)/2 - 1)/T
 
 # Adding a little bit of (positive) noise
-
-N.zeros <- length(which(RA8 == 0))
-noise <- rexp(N.zeros, 2)
-RA8[which(RA8 == 0)] <- RA8[which(RA8 == 0)] + rexp(N.zeros, 5)
+# N.zeros <- length(which(RA8 == 0))
+# noise <- abs(rnorm(N.zeros, 0, 1))
+# RA8[which(RA8 == 0)] <- RA8[which(RA8 == 0)] + noise
 
 # Plot Time Series
 plot.ts(RA8, type = "o", pch = 19)
@@ -131,10 +130,12 @@ legend("topright", c("Periodogram", "Spectrum AR(1)", "Spectrum AR(26)"), col = 
 
 driving.frequencies <- c()
 
+number.harmonics <- 5
+
 # Ranking the frequencies
 rank.freq <- sort(ar26.fit, decreasing = TRUE )
 
-for(i in 1:5) {
+for(i in 1:number.harmonics) {
   driving.frequencies[i] <- freq[which(ar26.fit == rank.freq[i]) + 1]
 }
 
@@ -143,8 +144,8 @@ driving.frequencies
 # Getting the harmonics 
 harmonics <- list()
 
-for(i in 1:5) {
-  harmonics[[i]] <- get_harmonic(res.RA8, driving.frequencies[i])
+for(i in 1:number.harmonics) {
+  harmonics[[i]] <- get_harmonic(RA8, driving.frequencies[i])
 }
 
 # Getting the trend
@@ -155,23 +156,24 @@ trend.RA8 <- as.vector(fitted(lm(RA8 ~ t)))
 mean.RA8 <- mean(RA8[-(which(RA8 == max(RA8)))])
 
 # Final Model
-model.RA8 <- harmonics[[1]] + harmonics[[2]] + harmonics[[4]] + mean.RA8
+# model.RA8 <- get_model(harmonics, T) + trend.RA8
+model.RA8 <- harmonics[[1]] + harmonics[[2]] + harmonics[[4]]  + mean.RA8
 
 # Plotting time series, adding single harmonics + final model
 plot.ts(RA8, type = "o", pch = 19, main = "Rest Activty Patient 8", ylab = "Temperature", 
         ylim = c(-4, max(RA8)))
-lines(1:T, harmonics[[1]] + mean.RA8, col = "blue", lwd = 3, lty = 3)
-lines(1:T, harmonics[[2]] + mean.RA8, col = "chartreuse3", lwd = 3, lty = 3)
-lines(1:T, harmonics[[4]] + mean.RA8, col = "grey", lwd = 3, lty = 3)
+# lines(1:T, harmonics[[1]] + mean.RA8, col = "blue", lwd = 3, lty = 3)
+# lines(1:T, harmonics[[2]] + mean.RA8, col = "chartreuse3", lwd = 3, lty = 3)
+# lines(1:T, harmonics[[4]] + mean.RA8, col = "grey", lwd = 3, lty = 3)
 lines(1:T, model.RA8, col = "red", lwd = 5)
 
-legend("topright", 
-       c(expression(paste(omega, " = 1/24 ")), 
-         expression(paste(omega, " = 1/12 ")),
-         expression(paste(omega, " = 1/8 "))), 
-       lty = 3, col = c("blue", "chartreuse3", 
-                        "darkorange1"), lwd = 3)
-legend("topleft", "Total Model", lwd = 5, col = "red", lty = 1)
+# legend("topright", 
+#       c(expression(paste(omega, " = 1/24 ")), 
+#         expression(paste(omega, " = 1/12 ")),
+#         expression(paste(omega, " = 1/8 "))), 
+#       lty = 3, col = c("blue", "chartreuse3", 
+#                        "darkorange1"), lwd = 3)
+# legend("topleft", "Total Model", lwd = 5, col = "red", lty = 1)
 
 
 
@@ -188,3 +190,36 @@ abline(h = 0, col = "black", lty = 2)
 grid <- -300:300/100
 qqnorm(std.residuals, ylim = c(-3, 3), xlim = c(-3, 3))
 lines(grid, grid)
+
+
+
+
+########### FORECASTING #############
+
+
+# My forecast for the next 24 hours, it's made by an average
+# of the final model we fitted, over 24 hours.
+# That is:
+
+Forecast24h <- (model.RA8[1:24] + model.RA8[25:48] + 
+                  model.RA8[49:72] + model.RA8[73:96])/4
+
+Residuals24h <- (residuals[1:24] + residuals[25:48] + 
+                   residuals[49:72] + residuals[73:96])/4
+
+upper.CI <- Forecast24h + 1.96*sd(Residuals24h)
+lower.CI <- Forecast24h - 1.96*sd(Residuals24h)
+
+
+# Plotting forecasting and relative confidence intervals
+plot.ts(RA8, lwd = 1, type = "o", pch = 19,
+        xlim = c(1, T + 24), ylab = "Rest Activity", ylim = c(min(lower.CI), max(RA8)))
+lines(1:T, model.RA8, col = "red", lwd = 4)
+lines(T:(T + 24), c(model.RA8[T], Forecast24h), col = "blue", lwd = 4)
+lines(T:(T + 24), c(model.RA8[T], upper.CI),
+      col = "blue", lwd = 2, lty = 3)
+lines(T:(T + 24), c(model.RA8[T], lower.CI),
+      col = "blue", lwd = 2, lty = 3)
+
+
+

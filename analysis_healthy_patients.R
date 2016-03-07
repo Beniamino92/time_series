@@ -141,6 +141,17 @@ performance.ar.p <- function(residuals.data, p, plot = TRUE) {
 
 
 
+# Function to get the final model, given the harmonics
+get_model <- function(harmonics, T) {
+  H <- length(harmonics)
+  final.model <- rep(0, T)
+  for(h in 1:H) {
+    final.model <- final.model + harmonics[[h]]
+  }
+  final.model
+}
+
+
 
 
 
