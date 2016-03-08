@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  8 MAR 2016 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  8 MAR 2016 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,22 +577,22 @@ Package pdftex.def Info: plots/p2.pdf used on input line 91.
 lots/p2.pdf>] <plots/p3.pdf, id=23, 597.23125pt x 420.57124pt>
 File: plots/p3.pdf Graphic file (type pdf)
  <use plots/p3.pdf>
-Package pdftex.def Info: plots/p3.pdf used on input line 120.
+Package pdftex.def Info: plots/p3.pdf used on input line 122.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 <plots/p4.pdf, id=24, 597.23125pt x 420.57124pt>
 File: plots/p4.pdf Graphic file (type pdf)
  <use plots/p4.pdf>
-Package pdftex.def Info: plots/p4.pdf used on input line 140.
+Package pdftex.def Info: plots/p4.pdf used on input line 144.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
  [3 <./plots/p3.pdf>]
-Overfull \hbox (14.21255pt too wide) in paragraph at lines 153--153
+Overfull \hbox (14.21255pt too wide) in paragraph at lines 159--159
 \OT1/cmr/bx/n/12 the un-con-di-tional or sta-tion-ary dis-tri-bu-tion of the AR
 (1)
  []
 
 
-Overfull \hbox (2.25284pt too wide) in paragraph at lines 153--153
+Overfull \hbox (2.25284pt too wide) in paragraph at lines 159--159
 \OT1/cmr/bx/n/12 pro-cess and com-pare with your plots of em-pir-i-cal ACF. 
  []
 
@@ -600,14 +600,14 @@ Overfull \hbox (2.25284pt too wide) in paragraph at lines 153--153
 File: plots/p5_alpha0.pdf Graphic file (type pdf)
 
 <use plots/p5_alpha0.pdf>
-Package pdftex.def Info: plots/p5_alpha0.pdf used on input line 187.
+Package pdftex.def Info: plots/p5_alpha0.pdf used on input line 195.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 <plots/p5_alpha05.pdf, id=51, 597.23125pt x 420.57124pt>
 File: plots/p5_alpha05.pdf Graphic file (type pdf)
 
 <use plots/p5_alpha05.pdf>
-Package pdftex.def Info: plots/p5_alpha05.pdf used on input line 193.
+Package pdftex.def Info: plots/p5_alpha05.pdf used on input line 201.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -617,7 +617,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p5_alphaneg05.pdf Graphic file (type pdf)
 
 <use plots/p5_alphaneg05.pdf>
-Package pdftex.def Info: plots/p5_alphaneg05.pdf used on input line 199.
+Package pdftex.def Info: plots/p5_alphaneg05.pdf used on input line 207.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -627,7 +627,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p5_alpha1.pdf Graphic file (type pdf)
 
 <use plots/p5_alpha1.pdf>
-Package pdftex.def Info: plots/p5_alpha1.pdf used on input line 205.
+Package pdftex.def Info: plots/p5_alpha1.pdf used on input line 213.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -637,7 +637,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p5_empacf.pdf Graphic file (type pdf)
 
 <use plots/p5_empacf.pdf>
-Package pdftex.def Info: plots/p5_empacf.pdf used on input line 211.
+Package pdftex.def Info: plots/p5_empacf.pdf used on input line 219.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -647,7 +647,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p5_trueacf.pdf Graphic file (type pdf)
 
 <use plots/p5_trueacf.pdf>
-Package pdftex.def Info: plots/p5_trueacf.pdf used on input line 215.
+Package pdftex.def Info: plots/p5_trueacf.pdf used on input line 223.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -656,14 +656,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [5 <./plots/p5_alpha0.pdf>] [6 <./plots/p5_alpha05.pdf> <./plots/p5_alphaneg05.
 pdf>] [7 <./plots/p5_alpha1.pdf> <./plots/p5_empacf.pdf>] [8 <./plots/p5_trueac
 f.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 224--224
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
 
  []
 
 <plots/p7_5_2.pdf, id=105, 597.23125pt x 420.57124pt>
 File: plots/p7_5_2.pdf Graphic file (type pdf)
  <use plots/p7_5_2.pdf>
-Package pdftex.def Info: plots/p7_5_2.pdf used on input line 267.
+Package pdftex.def Info: plots/p7_5_2.pdf used on input line 275.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -672,7 +672,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <plots/p7_1_2.pdf, id=106, 597.23125pt x 420.57124pt>
 File: plots/p7_1_2.pdf Graphic file (type pdf)
  <use plots/p7_1_2.pdf>
-Package pdftex.def Info: plots/p7_1_2.pdf used on input line 272.
+Package pdftex.def Info: plots/p7_1_2.pdf used on input line 280.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -682,7 +682,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p7_neg_1_2.pdf Graphic file (type pdf)
 
 <use plots/p7_neg_1_2.pdf>
-Package pdftex.def Info: plots/p7_neg_1_2.pdf used on input line 277.
+Package pdftex.def Info: plots/p7_neg_1_2.pdf used on input line 285.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -692,7 +692,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p7_img_1.pdf Graphic file (type pdf)
 
 <use plots/p7_img_1.pdf>
-Package pdftex.def Info: plots/p7_img_1.pdf used on input line 282.
+Package pdftex.def Info: plots/p7_img_1.pdf used on input line 290.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -702,7 +702,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: plots/p7_img_2.pdf Graphic file (type pdf)
 
 <use plots/p7_img_2.pdf>
-Package pdftex.def Info: plots/p7_img_2.pdf used on input line 287.
+Package pdftex.def Info: plots/p7_img_2.pdf used on input line 295.
 (pdftex.def)             Requested size: 345.0pt x 242.94963pt.
 
 
@@ -736,7 +736,7 @@ ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (12 pages, 231996 bytes).
+Output written on report.pdf (12 pages, 233602 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams

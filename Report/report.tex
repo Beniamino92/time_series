@@ -38,7 +38,7 @@
 }
 \begin{document}
 \section{Question 1}
-\subsection{Design an R function (or use another programme if you prefer) to evaluate the
+\subsection{Design an R function to evaluate the
 empirical ACF for a given series up to a specified maximum lag and plots it along
 with a data plot.}
 
@@ -92,6 +92,8 @@ my.acf(Y)
 \caption{Time series and ACF plot for series where $Y_t = \epsilon_t$ showing no significant autocorrelation at any lag $>0$}
 \end{figure}
 
+As the time series is drawn from an $iid$ process, we observe that the autocorrelation is not found to be significant at any lag, $0, \dots, 30$.
+
 \subsection{Take $Y_t$ to be white noise with outliers. Generate a white noise process as in P2 and randomly choose a number of time points at which you simulate from a Gaussian
 distribution with a much larger variance. Identify how the ACF deviates from that
 in P2 and relate these differences to the form of the simulated series.}
@@ -118,8 +120,10 @@ acf(Y.outliers)
 \end{lstlisting}
 \begin{figure}[ht]
 \includegraphics[width=\linewidth]{plots/p3.pdf}
-\caption{Time series and ACF plot for series where $Y_t = \epsilon_t$ with observations randomly simulated with larger variance. The ACF plot shows a significant autocorrelation at lag 30.}
+\caption{Time series and ACF plot for series where $Y_t = \epsilon_t$ with random observations simulated with larger variance. The ACF plot shows a significant autocorrelation at lag 30.}
 \end{figure}
+
+Assuming the outliers are truly anomalous within the data they can adversely affect our understanding of the process. The ACF shows a significant autocorrelation at lag 30 in the data, when we know these data were generated from white noise with outliers.
 
 
 \subsection{Take $Y_t$ to be a Normal Random walk: 
@@ -141,6 +145,8 @@ my.acf(random.walk, lag = 30)
 \caption{Time series and ACF plot for random walk.}
 \end{figure}
 
+The autocorrelation in a random walk process decays slowly as expected as observations are strongly related to previous observations.
+
 \subsection{Take $Y_t$ to be an autoregressive process of order 1, AR(1):
 $Y_t = \alpha Y_{t-1} + \epsilon_t$ where $|\alpha| < 1$. \\
 When simulating the series take $Y_1$ to be sample from the unconditional or stationary
@@ -151,6 +157,8 @@ Determine the effect of $\alpha$ on the behaviour of the series and its ACF. Der
 empirical ACF. \\
 Verify that the estimated ACF converges towards the true ACF as
 N is increased.}
+
+As $\alpha$ approaches $1$ we see the process devolves to a random walk process (Figure 7).
 
 \begin{lstlisting}
 ar1 <- function(alpha, T = 200) {
