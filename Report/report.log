@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  8 MAR 2016 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  8 MAR 2016 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -458,6 +458,9 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
@@ -478,18 +481,18 @@ File: lstlang3.sty 2015/06/04 1.6 listings language file
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -553,39 +556,190 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count114
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 42.
-LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 72.
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+<plots/p2.pdf, id=1, 597.23125pt x 420.57124pt>
+File: plots/p2.pdf Graphic file (type pdf)
+ <use plots/p2.pdf>
+Package pdftex.def Info: plots/p2.pdf used on input line 91.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+ [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./repo
-rt.aux) ) 
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./p
+lots/p2.pdf>] <plots/p3.pdf, id=23, 597.23125pt x 420.57124pt>
+File: plots/p3.pdf Graphic file (type pdf)
+ <use plots/p3.pdf>
+Package pdftex.def Info: plots/p3.pdf used on input line 120.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+<plots/p4.pdf, id=24, 597.23125pt x 420.57124pt>
+File: plots/p4.pdf Graphic file (type pdf)
+ <use plots/p4.pdf>
+Package pdftex.def Info: plots/p4.pdf used on input line 140.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+ [3 <./plots/p3.pdf>]
+Overfull \hbox (14.21255pt too wide) in paragraph at lines 153--153
+\OT1/cmr/bx/n/12 the un-con-di-tional or sta-tion-ary dis-tri-bu-tion of the AR
+(1)
+ []
+
+
+Overfull \hbox (2.25284pt too wide) in paragraph at lines 153--153
+\OT1/cmr/bx/n/12 pro-cess and com-pare with your plots of em-pir-i-cal ACF. 
+ []
+
+[4 <./plots/p4.pdf>] <plots/p5_alpha0.pdf, id=50, 597.23125pt x 420.57124pt>
+File: plots/p5_alpha0.pdf Graphic file (type pdf)
+
+<use plots/p5_alpha0.pdf>
+Package pdftex.def Info: plots/p5_alpha0.pdf used on input line 187.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+<plots/p5_alpha05.pdf, id=51, 597.23125pt x 420.57124pt>
+File: plots/p5_alpha05.pdf Graphic file (type pdf)
+
+<use plots/p5_alpha05.pdf>
+Package pdftex.def Info: plots/p5_alpha05.pdf used on input line 193.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p5_alphaneg05.pdf, id=52, 597.23125pt x 420.57124pt>
+File: plots/p5_alphaneg05.pdf Graphic file (type pdf)
+
+<use plots/p5_alphaneg05.pdf>
+Package pdftex.def Info: plots/p5_alphaneg05.pdf used on input line 199.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p5_alpha1.pdf, id=53, 597.23125pt x 420.57124pt>
+File: plots/p5_alpha1.pdf Graphic file (type pdf)
+
+<use plots/p5_alpha1.pdf>
+Package pdftex.def Info: plots/p5_alpha1.pdf used on input line 205.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p5_empacf.pdf, id=54, 597.23125pt x 420.57124pt>
+File: plots/p5_empacf.pdf Graphic file (type pdf)
+
+<use plots/p5_empacf.pdf>
+Package pdftex.def Info: plots/p5_empacf.pdf used on input line 211.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p5_trueacf.pdf, id=55, 597.23125pt x 420.57124pt>
+File: plots/p5_trueacf.pdf Graphic file (type pdf)
+
+<use plots/p5_trueacf.pdf>
+Package pdftex.def Info: plots/p5_trueacf.pdf used on input line 215.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./plots/p5_alpha0.pdf>] [6 <./plots/p5_alpha05.pdf> <./plots/p5_alphaneg05.
+pdf>] [7 <./plots/p5_alpha1.pdf> <./plots/p5_empacf.pdf>] [8 <./plots/p5_trueac
+f.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+
+ []
+
+<plots/p7_5_2.pdf, id=105, 597.23125pt x 420.57124pt>
+File: plots/p7_5_2.pdf Graphic file (type pdf)
+ <use plots/p7_5_2.pdf>
+Package pdftex.def Info: plots/p7_5_2.pdf used on input line 267.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p7_1_2.pdf, id=106, 597.23125pt x 420.57124pt>
+File: plots/p7_1_2.pdf Graphic file (type pdf)
+ <use plots/p7_1_2.pdf>
+Package pdftex.def Info: plots/p7_1_2.pdf used on input line 272.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p7_neg_1_2.pdf, id=107, 597.23125pt x 420.57124pt>
+File: plots/p7_neg_1_2.pdf Graphic file (type pdf)
+
+<use plots/p7_neg_1_2.pdf>
+Package pdftex.def Info: plots/p7_neg_1_2.pdf used on input line 277.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p7_img_1.pdf, id=108, 597.23125pt x 420.57124pt>
+File: plots/p7_img_1.pdf Graphic file (type pdf)
+
+<use plots/p7_img_1.pdf>
+Package pdftex.def Info: plots/p7_img_1.pdf used on input line 282.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plots/p7_img_2.pdf, id=109, 597.23125pt x 420.57124pt>
+File: plots/p7_img_2.pdf Graphic file (type pdf)
+
+<use plots/p7_img_2.pdf>
+Package pdftex.def Info: plots/p7_img_2.pdf used on input line 287.
+(pdftex.def)             Requested size: 345.0pt x 242.94963pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9
+
+] [10 <./plots/p7_5_2.pdf> <./plots/p7_1_2.pdf>] [11 <./plots/p7_neg_1_2.pdf> <
+./plots/p7_img_1.pdf>] [12 <./plots/p7_img_2.pdf>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 5138 strings out of 493033
- 64937 string characters out of 6134146
- 187439 words of memory out of 5000000
- 8609 multiletter control sequences out of 15000+600000
- 9663 words of font info for 37 fonts, out of 8000000 for 9000
+ 5275 strings out of 493033
+ 67117 string characters out of 6134146
+ 206640 words of memory out of 5000000
+ 8725 multiletter control sequences out of 15000+600000
+ 11362 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,40p,278b,1787s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
->
-Output written on report.pdf (1 page, 53788 bytes).
+ 38i,6n,40p,814b,1797s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (12 pages, 231996 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 202 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
