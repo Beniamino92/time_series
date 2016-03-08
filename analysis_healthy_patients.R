@@ -2,9 +2,9 @@
 
 # setwd("C:/Users/Beniamino/Desktop/Data_Healthy_Patients")
 # setwd("/homes/hadjamar/Documents/Project_8/time_series")
-# setwd("/homes/hadjamar/Documents/Project_8/")
+ setwd("/homes/hadjamar/Documents/Project_8/")
 
-setwd("/home/hadjamar/Desktop/Project_8")
+# setwd("/home/hadjamar/Desktop/Project_8")
 
 
 # Rest activity
@@ -97,7 +97,7 @@ get_harmonic <- function(x, omega) {
   
   U1 <- as.numeric(fit$coefficients[1])
   U2 <- as.numeric(fit$coefficients[2])
-  phi <- atan2(U2, U1)
+  phi <- -atan2(U2, U1)
   A <- sqrt(U1^2 + U2^2)
   
   harmonic <- A * cos(2*pi*1:T*omega + phi)

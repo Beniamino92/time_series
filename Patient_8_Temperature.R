@@ -4,14 +4,14 @@
 require("astsa")
 
 # setwd("C:/Users/Beniamino/Desktop/Project_8")
-setwd("/home/hadjamar/Desktop/Project_8")
-#setwd("/homes/hadjamar/Documents/Project_8/")
+# setwd("/home/hadjamar/Desktop/Project_8")
+setwd("/homes/hadjamar/Documents/Project_8/")
 
 source("analysis_healthy_patients.R")
 
 ### Let's work with Patient 8 ###
 
-hist(RA8, breaks = 40, col = "pink")
+hist(Temp8, breaks = 30, col = "pink")
 
 T <- length(Temp8) # 95
 t <- 1:T
@@ -283,7 +283,7 @@ for(i in 1:5) {
   harmonics[[i]] <- get_harmonic(res.Temp8, driving.frequencies[i])
 }
 model.Temp8 <- get_model(harmonics, T) + trend.temp8
-forecast24h <- (model[1:24] + model[25:48] + model[49:72])/3 
+forecast24h <- (model.Temp8[1:24] + model.Temp8[25:48] + model.Temp8[49:72])/3 
 
 sum((forecast24h - test.set)^2)/24 # 0.5783061
 
