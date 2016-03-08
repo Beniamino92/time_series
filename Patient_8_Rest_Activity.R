@@ -5,8 +5,8 @@ require("astsa")
 
 
 # setwd("C:/Users/Beniamino/Desktop/Project_8")
-# setwd("/homes/hadjamar/Documents/Project_8")
-setwd("/home/hadjamar/Desktop/Project_8")
+setwd("/homes/hadjamar/Documents/Project_8")
+# setwd("/home/hadjamar/Desktop/Project_8")
 
 source("analysis_healthy_patients.R")
 
@@ -64,6 +64,8 @@ pacf(res.RA8, lag = 31, main = "PACF")     # AR(10) ?
 performance.ar.p(res.RA8, 30, plot = TRUE)
 
 # It looks possibile either AR(1) or AR(26)
+
+
 
 
 #### Comparing periodogram with AR spectrum, by choosing AR(1) ##############
@@ -153,8 +155,6 @@ for(i in 1:number.harmonics) {
 t <- 1:T
 trend.RA8 <- as.vector(fitted(lm(RA8 ~ t)))
 
-# Mean 
-mean.RA8 <- mean(RA8[-(which(RA8 == max(RA8)))])
 
 # Final Model
 # model.RA8 <- get_model(harmonics, T) + trend.RA8
