@@ -1,0 +1,75 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.95,0.95,0.95}
+\definecolor{darkgray}{rgb}{0.7,0.7,0.7}
+
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+  frameround=ffff,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  %keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  backgroundcolor=\color{gray},
+  rulecolor=\color{darkgray},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{document}
+\section{Question 1}
+\subsection{Design an R function (or use another programme if you prefer) to evaluate the
+empirical ACF for a given series up to a specified maximum lag and plots it along
+with a data plot.}
+
+
+\begin{lstlisting}
+my.acf <- function(y, lag) {
+  
+  N <- length(y)
+  y.mean <- mean(y)
+  
+  out <- numeric(lag + 1)
+  out[1] <- var(y)
+  
+  # Evaluating ACF for each lag
+  for(h in 2:(lag + 1)) {
+    temp <- 0.0
+    for(t in 1:(N-(h-1))) {
+      temp <- temp + (y[t] - y.mean)*(y[t+(h-1)] - y.mean)
+    }
+    out[h] <- temp/N
+  }
+  
+  # Plotting ACF and time series
+  par(mfrow = c(2, 1))
+  grid <- seq(from = 0, to = lag, len = length(out))
+  plot.ts(y, type = "l", ylab = expression(Y[t]))
+  plot(grid, out, type = "h", main = "ACF", xlab = "Lag", ylab = "ACF")
+  abline(h = 0)
+  par(mfrow = c(1, 1))
+  
+}
+\end{lstlisting}
+
+
+\subsection{Take $Y_t$ = $\epsilon_t$ where $\epsilon_t$
+is Gaussian white noise.}
+
+
+\end{document}
