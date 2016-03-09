@@ -133,13 +133,13 @@ legend("topright", c("Periodogram", "Spectrum AR(1)", "Spectrum AR(26)"), col = 
 
 driving.frequencies <- c()
 
-number.harmonics <- 5
+number.harmonics <- 7
 
 # Ranking the frequencies
-rank.freq <- sort(ar26.fit, decreasing = TRUE )
+rank.freq <- sort(periodogram, decreasing = TRUE )
 
 for(i in 1:number.harmonics) {
-  driving.frequencies[i] <- freq[which(ar26.fit == rank.freq[i]) + 1]
+  driving.frequencies[i] <- freq[which(periodogram== rank.freq[i]) + 1]
 }
 
 driving.frequencies
@@ -148,7 +148,7 @@ driving.frequencies
 harmonics <- list()
 
 for(i in 1:number.harmonics) {
-  harmonics[[i]] <- get_harmonic(RA8, driving.frequencies[i])
+  harmonics[[i]] <- get_harmonic(res.RA8, driving.frequencies[i])
 }
 
 # Getting the trend
@@ -157,16 +157,32 @@ trend.RA8 <- as.vector(fitted(lm(RA8 ~ t)))
 
 
 # Final Model
+
+par(mfrow = c(2, 1))
 # model.RA8 <- get_model(harmonics, T) + trend.RA8
-model.RA8 <- harmonics[[1]] + harmonics[[2]] + mean.RA8
+model.RA8 <- get_model(harmonics, T)+ trend.RA8
 
 # Plotting time series, adding single harmonics + final model
-plot.ts(RA8, type = "o", pch = 19, main = "Rest Activty Patient 8", ylab = "Temperature", 
+plot.ts(RA8, type = "o", pch = 19, ylab = "Rest Activity", 
         ylim = c(-4, max(RA8)))
 # lines(1:T, harmonics[[1]] + mean.RA8, col = "blue", lwd = 3, lty = 3)
 # lines(1:T, harmonics[[2]] + mean.RA8, col = "chartreuse3", lwd = 3, lty = 3)
 # lines(1:T, harmonics[[4]] + mean.RA8, col = "grey", lwd = 3, lty = 3)
-lines(1:T, model.RA8, col = "red", lwd = 5)
+lines(1:T, model.RA8, col = "red", lwd = 3, type = "o")
+
+
+
+# My weird model
+model.RA8[which(model.RA8 < 0)] <- 0
+
+# Plotting time series, adding single harmonics + final model
+plot.ts(RA8, type = "o", pch = 19, ylab = "Rest Activity", 
+        ylim = c(-4, max(RA8)))
+# lines(1:T, harmonics[[1]] + mean.RA8, col = "blue", lwd = 3, lty = 3)
+# lines(1:T, harmonics[[2]] + mean.RA8, col = "chartreuse3", lwd = 3, lty = 3)
+# lines(1:T, harmonics[[4]] + mean.RA8, col = "grey", lwd = 3, lty = 3)
+lines(1:T, model.RA8, col = "red", lwd = 3, type = "o")
+
 
 # legend("topright", 
 #       c(expression(paste(omega, " = 1/24 ")), 
@@ -251,7 +267,7 @@ for(i in 1:number.harmonics) {
 
 # I decided to use first and second harmonics, otherwise it's gonna
 # over fit. (i.e., I get a bigger testing error)
-model.RA8 <- harmonics[[1]] + harmonics[[2]] + trend.RA8
+model.RA8 <- get_model(harmonics, T) + trend.RA8
 
 forecast24h <- (model.RA8[1:24] + model.RA8[25:48] + model.RA8[49:72])/3 
 

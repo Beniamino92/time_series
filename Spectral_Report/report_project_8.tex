@@ -109,10 +109,45 @@ Finally, we give a 24 hour forecast in Figure \ref{fig:forecast.Temp8}
 The second time series we analyse is the rest activity, which is measured through an accelerometer placed on the chest of the patient. This data takes a particular shape as it take value zero when the patient is resting, and a continuous range of positive values when he is not resting. Therefore, fitting an harmonic regression appears to be difficult and probably not the best choice. However, we give in  Figure \ref{fig:fit_restactivity.temp8} the harmonic fitting using 5 harmonics; in the same figure we show an alternative model where we put an indicator function to the fitted values: negative values are taken to be zero. 
 
 \begin{figure}[htbp]\centering
-	\includegraphics[scale = 0.22]{fit_rest_activty_Temp8.png}
+	\includegraphics[scale = 0.22]{fit_rest_activty_Patient_8.png}
 	\caption{Harmonic regression for rest activity of patient 8, using 5 harmonics. On top it is shown the classic harmonic fitting, whereas on the bottom the alternative model. }
 	\label{fig:fit_restactivity.temp8}
 \end{figure}
+
+
+\subsubsection*{Testing models}
+We now turn on testing the models we fit for both temperature and rest activity. In order to do so, we split our data in 3 days of training, and 1 day of testing; to measure the accuracy of our prediction we use standard mean square error (MSE). We summarise this in Table \ref{table:test.Temp} and Table \ref{table:test.Temp}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ ccc } 
+ Data & MSE & N. Harmonics \\
+  \hline
+ Temp2 & 1.92 & 5 \\
+ Temp8 & 0.58 & 5\\
+ Temp24& 0.27 & 7\\
+ Temp26& 0.43 & 3\\
+\end{tabular}
+\end{center}
+\caption{MSE for temperature. 3 days training, 1 day testing.}
+\label{table:test.Temp}
+\end{table}
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ ccc } 
+ Data & MSE & N.Harmonics \\
+  \hline
+ RA2 & 430.64 & 5 \\
+ RA8 & 308.60 & 5\\
+ RA24& 398.23 & 6\\
+ RA26& 577.91 & 5\\
+\end{tabular}
+\end{center}
+\caption{MSE for rest activity. 3 days training, 1 day testing.}
+\label{table:test.RA}
+\end{table}
 
 
 \end{document}
