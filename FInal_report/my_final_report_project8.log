@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  9 MAR 2016 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.2)  9 MAR 2016 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**final_report_project8.tex
-(./final_report_project8.tex
+**my_final_report_project8.tex
+(./my_final_report_project8.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -181,39 +181,21 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(./my_final_report_project8.aux)
+\openout1 = `my_final_report_project8.aux'.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen124
-\captionmargin@=\dimen125
-\captionwidth=\dimen126
-\caption@tempdima=\dimen127
-\caption@indent=\dimen128
-\caption@parindent=\dimen129
-\caption@hangindent=\dimen130
-)
-\c@ContinuedFloat=\count108
-Package caption Info: float package is loaded.
-Package caption Info: subfigure package is loaded.
-)
-(./final_report_project8.aux)
-\openout1 = `final_report_project8.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -251,16 +233,16 @@ LaTeX Font Info:    ... okay on input line 31.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen131
+\scratchcounter=\count108
+\scratchdimen=\dimen124
 \scratchbox=\box30
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen132
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen125
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -306,99 +288,128 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<Temp8.png, id=20, 1010.77625pt x 485.815pt>
+Package epstopdf Info: Source file: <aic_ra_8.eps>
+(epstopdf)                    date: 2016-03-08 16:34:40
+(epstopdf)                    size: 241699 bytes
+(epstopdf)             Output file: <aic_ra_8-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-09 10:21:17
+(epstopdf)                    size: 13030 bytes
+(epstopdf)             Command: <repstopdf --outfile=aic_ra_8-eps-converted-to.
+pdf aic_ra_8.eps>
+(epstopdf)             \includegraphics on input line 142.
+Package epstopdf Info: Output file is already uptodate.
+
+<aic_ra_8-eps-converted-to.pdf, id=20, 526.96875pt x 311.1625pt>
+File: aic_ra_8-eps-converted-to.pdf Graphic file (type pdf)
+
+<use aic_ra_8-eps-converted-to.pdf>
+Package pdftex.def Info: aic_ra_8-eps-converted-to.pdf used on input line 142.
+(pdftex.def)             Requested size: 237.13374pt x 140.02182pt.
+Package epstopdf Info: Source file: <aic_temp_8.eps>
+(epstopdf)                    date: 2016-03-08 16:34:40
+(epstopdf)                    size: 241672 bytes
+(epstopdf)             Output file: <aic_temp_8-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-03-09 10:21:17
+(epstopdf)                    size: 13640 bytes
+(epstopdf)             Command: <repstopdf --outfile=aic_temp_8-eps-converted-t
+o.pdf aic_temp_8.eps>
+(epstopdf)             \includegraphics on input line 143.
+Package epstopdf Info: Output file is already uptodate.
+
+<aic_temp_8-eps-converted-to.pdf, id=21, 526.96875pt x 311.1625pt>
+File: aic_temp_8-eps-converted-to.pdf Graphic file (type pdf)
+
+<use aic_temp_8-eps-converted-to.pdf>
+Package pdftex.def Info: aic_temp_8-eps-converted-to.pdf used on input line 143
+.
+(pdftex.def)             Requested size: 237.13374pt x 140.02182pt.
+ [3] [4 <./aic_ra_8-eps-converted-to.pdf> <./aic_temp_8-eps-converted-to.pdf>]
+<Temp8.png, id=53, 1010.77625pt x 485.815pt>
 File: Temp8.png Graphic file (type png)
  <use Temp8.png>
-Package pdftex.def Info: Temp8.png used on input line 145.
+Package pdftex.def Info: Temp8.png used on input line 226.
 (pdftex.def)             Requested size: 303.23521pt x 145.74562pt.
 
-<Temp8_Periodograms.png, id=21, 629.35126pt x 485.815pt>
+<Temp8_Periodograms.png, id=54, 629.35126pt x 485.815pt>
 File: Temp8_Periodograms.png Graphic file (type png)
 
 <use Temp8_Periodograms.png>
-Package pdftex.def Info: Temp8_Periodograms.png used on input line 157.
+Package pdftex.def Info: Temp8_Periodograms.png used on input line 238.
 (pdftex.def)             Requested size: 251.73604pt x 194.32256pt.
- [3]
-<Temp8_AIC_BIC.png, id=26, 629.35126pt x 485.815pt>
+
+<Temp8_AIC_BIC.png, id=55, 629.35126pt x 485.815pt>
 File: Temp8_AIC_BIC.png Graphic file (type png)
  <use Temp8_AIC_BIC.png>
-Package pdftex.def Info: Temp8_AIC_BIC.png used on input line 167.
+Package pdftex.def Info: Temp8_AIC_BIC.png used on input line 248.
 (pdftex.def)             Requested size: 201.39651pt x 155.46397pt.
 
-<Temp8_AR_spectrums.png, id=27, 629.35126pt x 485.815pt>
+<Temp8_AR_spectrums.png, id=56, 629.35126pt x 485.815pt>
 File: Temp8_AR_spectrums.png Graphic file (type png)
 
 <use Temp8_AR_spectrums.png>
-Package pdftex.def Info: Temp8_AR_spectrums.png used on input line 168.
+Package pdftex.def Info: Temp8_AR_spectrums.png used on input line 249.
 (pdftex.def)             Requested size: 201.39651pt x 155.46397pt.
- <fitted_temp8.png, id=28, 1224.575pt x 485.815pt>
+ [5 <./Temp8.png>] [6 <./Temp8_Periodograms.png> <./Temp8_AIC_BIC.png> <./Temp8
+_AR_spectrums.png>]
+<fitted_temp8.png, id=68, 1224.575pt x 485.815pt>
 File: fitted_temp8.png Graphic file (type png)
-
-<use fitted_temp8.png>
-Package pdftex.def Info: fitted_temp8.png used on input line 177.
+ <use fitted_temp8.png>
+Package pdftex.def Info: fitted_temp8.png used on input line 258.
 (pdftex.def)             Requested size: 453.08566pt x 179.74873pt.
 
-<forecasting_Temp8.png, id=29, 1263.72125pt x 485.815pt>
+<forecasting_Temp8.png, id=69, 1263.72125pt x 485.815pt>
 File: forecasting_Temp8.png Graphic file (type png)
 
 <use forecasting_Temp8.png>
-Package pdftex.def Info: forecasting_Temp8.png used on input line 186.
+Package pdftex.def Info: forecasting_Temp8.png used on input line 267.
 (pdftex.def)             Requested size: 467.56955pt x 179.74873pt.
-
-<fit_rest_activty_Patient_8.png, id=30, 1705.37125pt x 821.0675pt>
+ [7 <./fitted_temp8.png> <./forecasting_Temp8.png>]
+<fit_rest_activty_Patient_8.png, id=76, 1705.37125pt x 821.0675pt>
 File: fit_rest_activty_Patient_8.png Graphic file (type png)
 
 <use fit_rest_activty_Patient_8.png>
-Package pdftex.def Info: fit_rest_activty_Patient_8.png used on input line 197.
+Package pdftex.def Info: fit_rest_activty_Patient_8.png used on input line 278.
 
 (pdftex.def)             Requested size: 375.18285pt x 180.6354pt.
- [4 <./Temp8.png>] [5 <./Temp8_Periodograms.png> <./Temp8_AIC_BIC.png> <./Temp8
-_AR_spectrums.png>] [6 <./fitted_temp8.png> <./forecasting_Temp8.png>] [7 <./fi
-t_rest_activty_Patient_8.png (PNG copy)>]
-(./final_report_project8.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [8 <./fit_rest_activty_Patient_8.png (PNG copy)>] [9] (./my_final_report_proje
+ct8.aux) ) 
 Here is how much of TeX's memory you used:
- 4192 strings out of 493033
- 62147 string characters out of 6134146
- 133656 words of memory out of 5000000
- 7661 multiletter control sequences out of 15000+600000
+ 3166 strings out of 493033
+ 43545 string characters out of 6134146
+ 120881 words of memory out of 5000000
+ 6638 multiletter control sequences out of 15000+600000
  12763 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,39p,687b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on final_report_project8.pdf (7 pages, 333384 bytes).
+ 37i,11n,31p,690b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on my_final_report_project8.pdf (9 pages, 358492 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

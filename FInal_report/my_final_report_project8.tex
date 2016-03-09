@@ -7,11 +7,9 @@
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{dsfont}
-%\usepackage{subcaption}
-\usepackage{caption}
-\usepackage{amsfonts}
 
 \DeclareMathOperator{\expectation}{E}
+
 
 \newcommand{\euler}{\mathrm{e}}
 \newcommand{\diff}{\mathrm{d}}
@@ -21,8 +19,6 @@
 \newcommand{\matr}[1]{\mathsf{#1}}
 \newcommand{\dotdotdot}{\vphantom{.}_{\cdots}}
 \newcommand{\backshift}{\widehat{B}}
-
-
 
 %opening
 \title{\textbf{Time series models for temperature and rest activity of four healthy patients}}
@@ -39,6 +35,7 @@
 \section{Introduction}
 
 \section{Methodology}
+
 \subsection{SARMA}
 Suppose a time series $\{Y_1,Y_2,\dotdotdot,Y_T\}$ was observed and, without lost of generality, has zero mean. An ARMA$(p,q)$ model can be fitted which has the form
 \begin{equation}
@@ -49,91 +46,175 @@ where $\epsilon_t$ are some i.i.d.~distributed noise with zero mean and variance
 
 By using the backshift operator $\backshift$ where
 \begin{align*}
-\backshift Y_t &= Y_{t-1} \\
-\backshift \epsilon_t &= \epsilon_{t-1} \ ,
+\backshift^k Y_t &= Y_{t-k} \\
+\backshift^k \epsilon_t &= \epsilon_{t-k} \ ,
 \end{align*}
 Equation \eqref{eq:ARMA} can be expressed as
 \begin{equation*}
-Y_t = \sum_{i=1}^{p} \phi_i \backshift Y_{t} + \epsilon_t - \sum_{j=1}^{q} \theta_{j} \backshift \epsilon_{t}
+Y_t = \sum_{i=1}^{p} \phi_i \backshift^i Y_{t} + \epsilon_t - \sum_{j=1}^{q} \theta_{j} \backshift^j \epsilon_{t}
 \end{equation*}
 which can be rearranged to
 \begin{equation*}
 \theta\left(\backshift\right)Y_t=\phi\left(\backshift\right)\epsilon_t
 \end{equation*}
 where
-\begin{align*}
-\phi(x)&=1-\sum_{i=1}^{p} \phi_i x \\
-\theta(x)&=1-\sum_{i=1}^{q} \theta_i x
-\end{align*}
-are called the AR and MA characteristic equations respectively.
 
-Seasonality, of lag $s$, can be considered by including the AR and MA seasonal characteristic equation, $\Phi(x)$ and $\Theta(x)$ respectively, where
-\begin{align}
+
+\begin{equation*}
+\phi(x)=1-\sum_{i=1}^{p} \phi_i x, \qquad \theta(x)=1-\sum_{i=1}^{q} \theta_i x
+\end{equation*}
+are called the AR and MA characteristic equations respectively.
+\vspace{0.1cm}
+
+Seasonality, of lag $s$, can be considered by including the AR and MA seasonal characteristic equations, $\Phi(x)$ and $\Theta(x)$ respectively, where
+
+\begin{align*}
 \Phi(x) &= 1 - \sum_{i=1}^P \Phi_i x^{is} \\
 \Theta(x) &= 1 - \sum_{j=1}^Q \Theta_j x^{js} \ .
-\end{align}
+\end{align*}
 The SARMA$(p,q)\times(P,Q)_s$ model uses the seasonal characteristic equation where the model has the form
-\begin{equation}
+\begin{equation*}
 \phi\left(\backshift\right)\Phi\left(\backshift\right)Y_t
 =
 \theta\left(\backshift\right)\Theta\left(\backshift\right)\epsilon_t
-\end{equation}
+\end{equation*}
 
 Assuming the noise is Normally distributed, the maximum likelihood can be used to estimate the SARMA parameters: $\phi_1,\dotdotdot,\phi_p,\theta_1,\dotdotdot,\theta_q,\Phi_1,\dotdotdot\Phi_P,\Theta_1,\dotdotdot,\Theta_Q$. The assumption of Normal i.i.d.~noise can be checked by investigating the residuals of fitting the SARMA model onto the data.
 
 The objective was to fit SARMA onto activity and skin temperature time series data and see how they perform.
 
 \subsection{Spectral Analysis and Harmonic Regression}
+
 Let us consider the periodic model
 \begin{equation*}
 X_t = A\text{cos}(2\pi\omega t) + Z_t,
 \end{equation*} 
 where $Z_t$ is white noise, $A$ is the amplitude, $\phi$ is a phase shift that determine the initial point of the cosine function and $\omega$ is a fixed frequency. 
 Using trigonometric identities we rewrite $X_t$:
-\begin{equation}
+\begin{equation*}
 X_t = \beta_1\text{cos}(2\pi\omega t) + \beta_2\text{sin}(2\pi\omega t) + Z_t,
-\end{equation}
+\end{equation*}
 where $\beta_1 = A\text{cos}(\phi)$ and $\beta_2 = -A\text{sin}(\phi)$.
 
 We use the periodogram as a tool to pick the frequencies that drive the data; then we estimate for each frequency, its corresponding regressions coefficients by using least squares estimates; finally, we can easily obtain the estimate of the amplitude $ A$ and the phase shift $\phi$:
-\begin{equation}
+\begin{equation*}
 A = \sqrt{\hat{\beta}_1^2 + \hat{\beta}_2^2}, \qquad \phi = \text{tan}^{-1}\Big(\frac{\hat{\beta}_2}{\hat{\beta}_1}\Big)
-\end{equation}
+\end{equation*}
 
 As it discussed in [1], the \textit{Spectral Representation Theorem} states that any weakly stationary time series can be approximated as the
 sum of sinusoidal waveforms oscillating at different frequencies:
-\begin{equation}
+\begin{equation*}
 X_{t} = \mu + \sum_{k = 1}^{K} \big\{ \beta_{k 1}\text{cos}(2\pi\omega_k t) + \beta_{k 2}\text{sin}(2\pi\omega_k t) \big\},
-\end{equation}
+\end{equation*}
 where $\{\omega_k\}_{k = 1}^{K}$ is a collection of distinct fixed frequencies.
 \vspace{0.1cm}
 
 In this scenario, least squares estimates from this regression can be effectively obtained by associating the data to the frequency domain via the Discrete Fourier Transform (DFT), and then obtaining a statistic called the \textit{periodogram}, which is an unbiased estimator of the \textit{spectral density function}. Informally, the periodogram 
 measures the squared correlation of the data with sines and cosine oscillating at frequency $\omega_j$ = $j/T$
 
-\section{Applications}
+\section{Application}
 \subsection{SARMA}
-Selecting $p,q,P,Q,s$ to fit the SARMA model, onto the time series data, is troublesome because it involves investigating 5 parameters.
+Selecting $p,q,P,Q,s$ to use to fit the SARMA model, onto the time series, is troublesome because it involves investigating 5 parameters.
 
 $s$ was selected and fixed to be 24 hours because it was observed, by inspection, that there may be a cyclic behaviour, with a period of 24 hours, in the time series.
 
-The Akaike information criterion (AIC) and Bayesian information criterion (BIC) was used to select which $p,q,P,Q$ to fit the SARMA model onto the data. The information criterions have the form
-\begin{align}
+The Akaike information criterion (AIC) and Bayesian information criterion (BIC) was used to select which $p,q,P,Q$ to use to fit the SARMA model onto the data. The information criterions have the form
+\begin{align*}
 \textup{AIC}&=T\ln{\widehat{\sigma}^2}+(p+q+P+Q)2\\
 \textup{BIC}&=T\ln{\widehat{\sigma}^2}+(p+q+P+Q)\ln{T}
-\end{align}
+\end{align*}
 where $\widehat{\sigma}^2$ is the estimated variance of the residuals. Firstly, ARMA$(p,q)$ models were fitted for $p=0,1,\dotdotdot,5$ and $q=0,1,\dotdotdot,5$. The $p,q$ pair which minimises an information criterion was selected and fixed. Secondly, SARMA$(p,q)\times(P,Q)_s$ models were fitted for $P=0,1,2$ and $Q=0,1,2$. The $P,Q$ pair was selected which minimises an information criterion. MATLAB \emph{regARMA} was used to fit the SARMA model onto the data.
 
 The model was tested by fitting the SARMA model, using the AIC/BIC procedure, onto the first 3 days of the data. The model was then extrapolated to do a 24 hour forecast. Such a forecast was then compared with the actual data using the mean squared error (and the logarithmic scoring). That is suppose $\{\widehat{Y}_{T+1},\widehat{Y}_{T+2},\dotdotdot,\widehat{Y}_{T+h}\}$ was the forecast of $\{{Y}_{T+1},{Y}_{T+2},\dotdotdot,{Y}_{T+h}\}$, then the mean squared error (MSE) was calculated using
-\begin{equation}
+\begin{equation*}
 \textup{MSE} = \frac{\sum_{k=1}^{h}\left(\widehat{Y}_{T+k}-Y_{T+k}\right)^2}{h} \ .
-\end{equation}
+\end{equation*}
 
 The forecast error, $\{\widehat{e}_{T+1},\widehat{e}_{T+2},\dotdotdot,\widehat{e}_{T+h}\}$, was obtained and used to estimate approximately the error in the MSE using the Delta method given as
-\begin{equation}
+\begin{equation*}
 \sigma_{\textup{MSE}} = \frac{2}{h}\sqrt{\sum_{k=1}^{h}\left(\widehat{Y}_{T+k}-Y_{T+k}\right)^2\left(\widehat{e}_{T+k}\right)^2} \ .
-\end{equation}
+\end{equation*}
 
+SARMA$(p,q)\times(P,Q)_{24}$ models were fitted onto the 8 time series data independently. As an example, Figure \ref{fig:sarmafit} shows the selected SARMA model, using AIC, being fitted onto the first 3 days of the time series of subject 8. The model was then extrapolated to do a 24 hour forecast.
+
+\begin{figure}[htbp]
+	\centering
+	\subfigure[Activity Time Series]{\includegraphics[scale = 0.45]{aic_ra_8.eps}}
+	\subfigure[Skin Temperature Time Series]{\includegraphics[scale = 0.45]{aic_temp_8.eps}}
+	\hfill
+	\caption{Top-left: AIC fitting ARMA$(p,q)$ onto the first 3 days of the time series. Top-right: Difference in AIC when fitting SARMA(2,1)$\times(P,Q)_{24}$ compared with ARMA(2,1). Bottom: SARMA(2,1)$\times(2,0)_{24}$ was fitted and then extrapolated to do a 24 hour forecast (red dotted line). This was compared with the actual time series (solid blue line).}
+	\label{fig:sarmafit}
+\end{figure}
+
+It was observed that the forecast error on the activity time series blew up in the order of $\sim 10^2$. A forecast with such an error is practically useless thus it was considered that the SARMA model did not fit well with the activity time series.
+
+The forecast error on the temperature time series was sensible and the mean squared errors along with the selected SARMA model is shown in Tables \ref{table:temp_AIC} and \ref{table:temp_BIC}. Comparing the two tables, the BIC consistently selected the SARMA model with less parameters, compared with AIC.
+
+There was not much difference in the mean squared errors between using AIC or BIC to select the favourable SARMA model, even though the values of $p$ and $q$ did varied. In additional both information criterions favoured at least one 24 hour seasonal autoregressive parameter, thus it could be possible the seasonal part of the SARMA captures most of the behaviour of the time series.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ cccccc } 
+ Data & p & q & P & Q & MSE ($\textup{g}^2$)\\
+  \hline
+ RA2 & 5 & 5 & 1 & 0 & $\sim10^2$\\
+ RA8 & 2 & 4 & 2 & 0 & $\sim10^2$\\
+ RA24& 4 & 5 & 0 & 0 & $\sim10^2$\\
+ RA26& 4 & 4 & 2 & 0 & $\sim10^3$\\
+\end{tabular}
+\end{center}
+\caption{The selected SARMA$(p,q)\times(P,Q)_{24}$ model, using AIC, to fit the first 3 days of activity time series. The 24 hour forecast was then assessed using the mean squared error.}
+\label{table:ra_AIC}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ cccccc } 
+ Data & p & q & P & Q & MSE ($\textup{g}^2$)\\
+  \hline
+ RA2 & 2 & 2 & 1 & 1 & $\sim10^2$\\
+ RA8 & 1 & 0 & 2 & 0 & $\sim10^2$\\
+ RA24& 3 & 2 & 2 & 0 & $\sim10^3$\\
+ RA26& 1 & 0 & 1 & 1 & $\sim10^3$\\
+\end{tabular}
+\end{center}
+\caption{The selected SARMA$(p,q)\times(P,Q)_{24}$ model, using BIC, to fit the first 3 days of activity time series. The 24 hour forecast was then assessed using the mean squared error.}
+\label{table:ra_BIC}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ cccccc } 
+ Data & p & q & P & Q & MSE ($^{\circ}\textup{C}^2$)\\
+  \hline
+ Temp2 & 2 & 4 & 2 & 0 & $1.71\pm0.09$\\
+ Temp8 & 2 & 1 & 2 & 0 & $1.4\pm0.1$\\
+ Temp24& 4 & 4 & 1 & 1 & $0.43\pm0.04$\\
+ Temp26& 5 & 2 & 2 & 0 & $0.7\pm0.1$\\
+\end{tabular}
+\end{center}
+\caption{The selected SARMA$(p,q)\times(P,Q)_{24}$ model, using AIC, to fit the first 3 days of temperature time series. The 24 hour forecast was then assessed using the mean squared error.}
+\label{table:temp_AIC}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{ cccccc } 
+ Data & p & q & P & Q & MSE ($^{\circ}\textup{C}^2$)\\
+  \hline
+ Temp2 & 0 & 2 & 2 & 0 & $1.72\pm0.08$\\
+ Temp8 & 2 & 1 & 2 & 0 & $1.4\pm0.1$\\
+ Temp24& 2 & 4 & 1 & 1 & $0.36\pm0.03$\\
+ Temp26& 2 & 0 & 2 & 0 & $0.69\pm0.06$\\
+\end{tabular}
+\end{center}
+\caption{The selected SARMA$(p,q)\times(P,Q)_{24}$ model, using BIC, to fit the first 3 days of temperature time series. The 24 hour forecast was then assessed using the mean squared error.}
+\label{table:temp_BIC}
+\end{table}
+
+
+
+\newpage
 \subsection{Spectral Analysis and Harmonic Regression}
 We now apply the techniques summarised above on a dataset consisting of two different measurements of 4 healthy patients (whose ID are 2, 8, 24, 26). These observations are temperature and rest activity. 
 
@@ -234,5 +315,7 @@ We now turn on testing the models we fit for both temperature and rest activity.
 \label{table:test.RA}
 \end{table}
 
-\section{Conclusions}
+
 \end{document}
+
+
