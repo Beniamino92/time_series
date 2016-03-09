@@ -38,8 +38,6 @@ We use the periodogram as a tool to pick the frequencies that drive the data; th
 A = \sqrt{\hat{\beta}_1^2 + \hat{\beta}_2^2}, \qquad \phi = \text{tan}^{-1}\Big(\frac{\hat{\beta}_2}{\hat{\beta}_1}\Big)
 \end{equation}
 
-Measure the squared correlation of the data with sines and cosine oscillating at frequency $\omega_j$ = $j/T$
-
 As it discussed in [1], the \textit{Spectral Representation Theorem} states that any weakly stationary time series can be approximated as the
 sum of sinusoidal waveforms oscillating at different frequencies:
 \begin{equation}
@@ -48,7 +46,8 @@ X_{t} = \mu + \sum_{k = 1}^{K} \big\{ \beta_{k 1}\text{cos}(2\pi\omega_k t) + \b
 where $\{\omega_k\}_{k = 1}^{K}$ is a collection of distinct fixed frequencies.
 \vspace{0.1cm}
 
-In this scenario, least squares estimates from this regression can be effectively obtained by associating the data to the frequency domain via the Discrete Fourier Transform (DFT), and then obtaining a statistic called the \textit{periodogram}, which is an unbiased estimator of the \textit{spectral density function}. 
+In this scenario, least squares estimates from this regression can be effectively obtained by associating the data to the frequency domain via the Discrete Fourier Transform (DFT), and then obtaining a statistic called the \textit{periodogram}, which is an unbiased estimator of the \textit{spectral density function}. Informally, the periodogram 
+measures the squared correlation of the data with sines and cosine oscillating at frequency $\omega_j$ = $j/T$
 
 \subsection{Application}
 We now apply the techniques summarised above on a dataset consisting of two different measurements of 4 healthy patients (whose ID are 2, 8, 24, 26). These observations are temperature and rest activity. 
@@ -87,12 +86,32 @@ Furthermore, it can be shown that the spectrum of any (weakly) stationary time s
 	\label{fig:spectrums_Temp8}
 \end{figure}
 
-Once the correct frequencies are selected, we can apply the harmonics regression explained in Section 1.1. The resulting model is given in Figure \ref{fig:fitted.Temp8}.
+Once the correct frequencies are selected, we can apply the harmonics regression explained in Section 1.1. The resulting model is given in Figure \ref{fig:fitted.Temp8}, where we used a total of 5 harmonics. As we stated before, the main frequency that drives the data results in a period of 24 hours
 
 \begin{figure}[htbp]\centering
 	\includegraphics[scale = 0.37]{fitted_temp8.png}
 	\caption{Harmonic regression for temperature of patient 8, using 5 different harmonics. Dotted lines represent the fitting for single harmonics; thick red line is the superposition of the dotted harmonics, which is the final fit.}
 	\label{fig:fitted.Temp8}
+\end{figure}
+
+\vspace{1cm}
+Finally, we give a 24 hour forecast in Figure \ref{fig:forecast.Temp8}
+
+\begin{figure}[htbp]\centering
+	\includegraphics[scale = 0.37]{forecasting_Temp8.png}
+	\caption{24 hour forecast for temperature of patient 8.}
+	\label{fig:forecast.Temp8}
+\end{figure}
+
+
+
+\subsubsection*{Rest Activity}
+The second time series we analyse is the rest activity, which is measured through an accelerometer placed on the chest of the patient. This data takes a particular shape as it take value zero when the patient is resting, and a continuous range of positive values when he is not resting. Therefore, fitting an harmonic regression appears to be difficult and probably not the best choice. However, we give in  Figure \ref{fig:fit_restactivity.temp8} the harmonic fitting using 5 harmonics; in the same figure we show an alternative model where we put an indicator function to the fitted values: negative values are taken to be zero. 
+
+\begin{figure}[htbp]\centering
+	\includegraphics[scale = 0.22]{fit_rest_activty_Temp8.png}
+	\caption{Harmonic regression for rest activity of patient 8, using 5 harmonics. On top it is shown the classic harmonic fitting, whereas on the bottom the alternative model. }
+	\label{fig:fit_restactivity.temp8}
 \end{figure}
 
 
